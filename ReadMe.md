@@ -25,7 +25,7 @@ kubectl create -f .\rg-example.yml
 
 ```bash
 kubectl get resourcegroup
-NAME   SYNCED   READY   EXTERNAL-NAME   AGE
+NME   SYNCED   READY   EXTERNAL-NAME   AGE
 docs   True     True    docs            4m23s
 ```
 
@@ -70,3 +70,17 @@ kubectl delete virtualnetwork.network crossplane-quickstart-network
 kubectl get virtualnetwork.network
     No resources found
 ```
+![image](https://github.com/jeesondk/crossplane-demo/assets/39995834/cf37e6ff-9aa0-41df-8313-be41086bb774)
+
+### Removing ResourceGroup
+
+```bash
+kubectl delete resourcegroup docs
+  resourcegroup.azure.upbound.io "docs" deleted
+```
+
+```bash
+kubectl get resourcegroup
+  No resources found
+```
+
