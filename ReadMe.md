@@ -15,6 +15,12 @@ spec:
   forProvider:
     location: North Europe
 ```
+
+```bash
+kubectl create -f .\rg-example.yml
+```
+
+
 ![image](https://github.com/jeesondk/crossplane-demo/assets/39995834/45f16efa-bb6f-40a9-9caa-3bf8573b85ee)
 
 ```bash
@@ -38,6 +44,11 @@ spec:
     location: "North Europe"
     resourceGroupName: docs
 ```
+
+```bash
+kubectl create -f .\vnet-example.yml
+```
+
 ![image](https://github.com/jeesondk/crossplane-demo/assets/39995834/50561773-e593-4689-9f4b-489c3a8bb026)
 
 ```bash
