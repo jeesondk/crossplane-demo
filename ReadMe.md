@@ -6,7 +6,7 @@ Based on [this guide](https://docs.crossplane.io/latest/getting-started/provider
 
 ### ResourceGroup
 
-´´´yaml
+```yaml
 apiVersion: azure.upbound.io/v1beta1
 kind: ResourceGroup
 metadata:
@@ -14,19 +14,19 @@ metadata:
 spec:
   forProvider:
     location: North Europe
-´´´
+```
 ![image](https://github.com/jeesondk/crossplane-demo/assets/39995834/45f16efa-bb6f-40a9-9caa-3bf8573b85ee)
 
-´´´bash
+```bash
 kubectl get resourcegroup
 NAME   SYNCED   READY   EXTERNAL-NAME   AGE
 docs   True     True    docs            4m23s
-´´´
+```
 
 
 ### VNet
 
-´´´yaml
+```yaml
 apiVersion: network.azure.upbound.io/v1beta1
 kind: VirtualNetwork
 metadata:
@@ -37,14 +37,14 @@ spec:
       - 10.0.0.0/16
     location: "North Europe"
     resourceGroupName: docs
-´´´
+```
 ![image](https://github.com/jeesondk/crossplane-demo/assets/39995834/50561773-e593-4689-9f4b-489c3a8bb026)
 
-´´´bash
+```bash
 kubectl get virtualnetwork.network
 NAME                            READY   SYNCED   EXTERNAL-NAME                   AGE
 crossplane-quickstart-network   True    True     crossplane-quickstart-network   2m45s
-´´´
+```
 
 
 ## Vnet & RG removed
