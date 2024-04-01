@@ -60,3 +60,13 @@ crossplane-quickstart-network   True    True     crossplane-quickstart-network  
 
 ## Vnet & RG removed
 
+### Removing VNet
+```bash
+kubectl delete virtualnetwork.network crossplane-quickstart-network
+    virtualnetwork.network.azure.upbound.io "crossplane-quickstart-network" deleted
+```
+
+```bash
+kubectl get virtualnetwork.network
+    No resources found
+```
