@@ -1,7 +1,6 @@
 apiVersion: lambda.aws.upbound.io/v1beta1
 kind: Function
 metadata:
-  namespace: aws-lambda
   annotations:
     meta.upbound.io/example-id: lambda/v1beta1/alias
   labels:
