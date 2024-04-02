@@ -11,7 +11,7 @@ spec:
     handler: index.lambda_handler
     publish: true
     region: eu-west-1
-    role: arn:aws:iam::123456789012:role/role-with-inline-policy
+    role: arn:aws:iam::106699180655:role/role-with-inline-policy
     runtime: python3.9
     s3Bucket: test-lambda-alias
     s3Key: lambda-alias-test.zip
