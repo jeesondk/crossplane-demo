@@ -11,9 +11,6 @@ spec:
     handler: index.lambda_handler
     publish: true
     region: eu-west-1
-    roleSelector:
-      matchLabels:
-        testing.upbound.io/example-name: test_lambda_alias
     runtime: python3.9
     s3BucketSelector:
       matchLabels:
