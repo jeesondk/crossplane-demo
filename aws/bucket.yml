@@ -1,7 +1,6 @@
 apiVersion: s3.aws.upbound.io/v1beta1
 kind: Bucket
 metadata:
-  namespace: aws-lambda
   annotations:
     crossplane.io/external-name: ${Rand.RFC1123Subdomain}
     meta.upbound.io/example-id: s3/v1beta1/bucketnotification
@@ -10,4 +9,4 @@ metadata:
   name: test-lambda-alias
 spec:
   forProvider:
-    region: us-west-1
+    region: eu-west-1
