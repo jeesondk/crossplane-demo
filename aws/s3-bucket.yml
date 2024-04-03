@@ -2,7 +2,7 @@ apiVersion: s3.aws.upbound.io/v1beta1
 kind: Bucket
 metadata:
   labels:
-    testing.upbound.io/example-name: s3
+    testing.upbound.io/example-name: crossplane-test-s3
   name: lambda-test-bucket-83u5689u983456
 spec:
   forProvider:
