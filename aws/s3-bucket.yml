@@ -12,3 +12,5 @@ spec:
     region: eu-west-1
     tags:
       Name: LambdaBucket
+  providerConfigRef:
+    name: default
