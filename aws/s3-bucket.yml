@@ -6,7 +6,6 @@ metadata:
     meta.upbound.io/example-id: s3/v1beta1/bucketlifecycleconfiguration
   labels:
     testing.upbound.io/example-name: s3
-  name: example-${Rand.RFC1123Subdomain}
 spec:
   forProvider:
     objectLockEnabled: true
