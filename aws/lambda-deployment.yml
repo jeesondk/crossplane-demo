@@ -11,6 +11,6 @@ spec:
     bucketSelector:
       matchLabels:
         testing.upbound.io/example-name: s3
-    forProvider:
-      key: lambda-alias-test.zip
       region: eu-west-1
+      key: lambda-alias-test.zip
+
