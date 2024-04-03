@@ -16,7 +16,7 @@ metadata:
     meta.upbound.io/example-id: s3/v1beta1/bucketobject
   labels:
     testing.upbound.io/example-name: test_lambda_alias
-  name: LambdaCode-object
+  name: lambda-code-object
 spec:
   forProvider:
     bucketSelector:
@@ -24,4 +24,4 @@ spec:
         testing.upbound.io/example-name: test_lambda_alias
     region: eu-west-1
     key: lambda-alias-test.zip
-    source: './py-app/lambda-alias-test.zip'
+    source: 'py-app/lambda-alias-test.zip'
