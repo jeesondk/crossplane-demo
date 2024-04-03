@@ -13,3 +13,4 @@ spec:
         testing.upbound.io/example-name: s3
     forProvider:
       key: lambda-alias-test.zip
+      region: eu-west-1
