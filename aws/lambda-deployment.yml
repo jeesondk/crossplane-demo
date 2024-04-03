@@ -13,5 +13,5 @@ spec:
         testing.upbound.io/example-name: s3
     region: eu-west-1
     key: lambda-alias-test.zip
-    source: /tmp/lambda-alias-test.zip
+    source: ../lambda-alias-test.zip
 
