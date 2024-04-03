@@ -1,11 +1,11 @@
 apiVersion: s3.aws.upbound.io/v1beta1
 kind: Bucket
 metadata:
-  generateName: lambda-bucket-
+  generateName: crossplane-bucket-
   labels:
-    testing.upbound.io/example-name: crossplane-test-s3
+    testing.upbound.io/example-name: test_lambda_alias
 spec:
   forProvider:
-    region: eu-west-1
+    region: us-east-2
   providerConfigRef:
     name: default
