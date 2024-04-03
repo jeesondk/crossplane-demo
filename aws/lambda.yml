@@ -15,5 +15,5 @@ spec:
     runtime: python3.9
     bucketSelector:
       matchLabels:
-        testing.upbound.io/example-name: s3
+        testing.upbound.io/example-name: crossplane-test-s3
     s3Key: lambda-alias-test.zip
