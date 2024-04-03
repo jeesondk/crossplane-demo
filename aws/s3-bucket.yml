@@ -7,3 +7,21 @@ metadata:
 spec:
   forProvider:
     region: eu-west-1
+
+---
+apiVersion: s3.aws.upbound.io/v1beta1
+kind: BucketObject
+metadata:
+  annotations:
+    meta.upbound.io/example-id: s3/v1beta1/bucketobject
+  labels:
+    testing.upbound.io/example-name: test_lambda_alias
+  name: LambdaCode-object
+spec:
+  forProvider:
+    bucketSelector:
+      matchLabels:
+        testing.upbound.io/example-name: test_lambda_alias
+    region: eu-west-1
+    key: lambda-alias-test.zip
+    source: './py-app/lambda-alias-test.zip'
