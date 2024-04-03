@@ -6,4 +6,4 @@ metadata:
   name: crossplane-test-s3
 spec:
   forProvider:
-    region: us-east-2
+    region: eu-west-1
