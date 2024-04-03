@@ -8,12 +8,7 @@ metadata:
   name: object
 spec:
   initProvider:
-    bucketSelector:
-      matchLabels:
-        testing.upbound.io/example-name: s3
-    region: eu-west-1
     source: lambda-alias-test.zip
-    key: lambda-alias-test.zip
   forProvider:
     bucketSelector:
       matchLabels:
