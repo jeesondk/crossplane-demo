@@ -13,5 +13,7 @@ spec:
     region: eu-west-1
     role: arn:aws:iam::106699180655:role/role-with-inline-policy
     runtime: python3.9
-    s3Bucket: crossplane-bucket-2phxg
+    bucketSelector:
+      matchLabels:
+        testing.upbound.io/example-name: s3
     s3Key: lambda-alias-test.zip

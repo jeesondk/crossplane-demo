@@ -1,0 +1,15 @@
+apiVersion: s3.aws.upbound.io/v1beta1
+kind: Bucket
+metadata:
+  generateName: lambda-bucket-
+  annotations:
+    meta.upbound.io/example-id: s3/v1beta1/bucketlifecycleconfiguration
+  labels:
+    testing.upbound.io/example-name: s3
+  name: example-${Rand.RFC1123Subdomain}
+spec:
+  forProvider:
+    objectLockEnabled: true
+    region: eu-west-1
+    tags:
+      Name: LambdaBucket
