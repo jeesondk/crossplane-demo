@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-app
+spec:
+  selector:
+    matchLabels:
+      app: test-app
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: test-app
+    spec:
+      containers:
+      - name: test-app
+        image: jeesondk/testcode:latest
+        ports:
+        - containerPort: 8080
+        env:
+        - name: POSTGRES_PASSWORD
+          value: postgres
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: test-app
+spec:
+  type: LoadBalancer
+  selector:
+    app: test-app
+  ports:
+  - protocol: TCP
+    port: 8090
+    targetPort: 8080
