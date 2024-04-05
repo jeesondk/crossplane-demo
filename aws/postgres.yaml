@@ -23,8 +23,8 @@ spec:
       key: password
       name: testapp-dbinstance
       namespace: test-app
-    publiclyAccessible: false
-    region: us-west-1
+    publiclyAccessible: true
+    region: eu-west-1
     skipFinalSnapshot: true
     storageEncrypted: true
     storageType: gp2
