@@ -25,7 +25,7 @@ spec:
     passwordSecretRef:
       key: password
       name: testapp-dbinstance
-      namespace: upbound-system
+      namespace: test-app
     publiclyAccessible: false
     region: us-west-1
     skipFinalSnapshot: true
