@@ -18,9 +18,6 @@ spec:
     engine: postgres
     engineVersion: "16.1"
     instanceClass: db.t3.micro
-    kmsKeyIdSelector:
-      matchLabels:
-        testing.upbound.io/example-name: testapp-key
     maintenanceWindow: Mon:00:00-Mon:03:00
     passwordSecretRef:
       key: password
