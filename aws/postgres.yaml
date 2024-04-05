@@ -32,3 +32,4 @@ spec:
   writeConnectionSecretToRef:
     name: testapp-dbinstance-out
     namespace: test-app
+
