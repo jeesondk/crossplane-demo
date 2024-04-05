@@ -9,7 +9,7 @@ builder.Configuration.AddEnvironmentVariables();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<WeatherContext>(opt =>
-    opt.UseNpgsql(builder.Configuration.GetConnectionString("WeatherContext")));
+    opt.UseNpgsql($"Host={builder.Configuration.GetValue<string>("DB_ENDPOINT")};Database=testapp;Username={builder.Configuration.GetValue<string>("DB_USERNAME")};Password={builder.Configuration.GetValue<string>("DB_PASSWORD")}"));
 
 var app = builder.Build();
 
