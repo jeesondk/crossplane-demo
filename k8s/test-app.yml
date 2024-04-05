@@ -18,11 +18,11 @@ spec:
         ports:
         - containerPort: 8080
         env:
-        - name: DB_ENDPOINT
+        - name: DB_HOST
           valueFrom:
             secretKeyRef:
               name: testapp-dbinstance-out
-              key: endpoint
+              key: host
         - name: DB_PASSWORD
           valueFrom:
             secretKeyRef:
