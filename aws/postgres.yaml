@@ -6,7 +6,7 @@ metadata:
     uptest.upbound.io/timeout: "3600"
   labels:
     testing.upbound.io/example-name: example-dbinstance
-  name: testapp-dbinstance-${Rand.RFC1123Subdomain}
+  name: testapp-dbinstance-05042024
 spec:
   forProvider:
     allocatedStorage: 20
