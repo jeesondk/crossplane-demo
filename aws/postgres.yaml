@@ -1,37 +1,37 @@
-apiVersion: rds.aws.upbound.io/v1beta1
+apiVersion: rds.aws.upbound.io/v1beta2
 kind: Instance
 metadata:
   annotations:
-    meta.upbound.io/example-id: rds/v1beta1/instanceroleassociation
+    meta.upbound.io/example-id: rds/v1beta1/instance
     uptest.upbound.io/timeout: "3600"
   labels:
-    testing.upbound.io/example-name: dbinstance
-  name: dbinstance1
+    testing.upbound.io/example-name: example-dbinstance
+  name: example-dbinstance-${Rand.RFC1123Subdomain}
 spec:
   forProvider:
     allocatedStorage: 20
     autoGeneratePassword: true
     autoMinorVersionUpgrade: true
-    # backupRetentionPeriod: 14
-    # backupWindow: 09:46-10:16
-    dbName: test
+    backupRetentionPeriod: 14
+    backupWindow: 09:46-10:16
+    dbName: testapp
     engine: postgres
-    engineVersion: "13.7"
+    engineVersion: "16.1"
     instanceClass: db.t3.micro
-    # kmsKeyIdSelector:
-    #   matchLabels:
-    #     testing.upbound.io/example-name: sample-key-ira
-    # maintenanceWindow: Mon:00:00-Mon:03:00
+    kmsKeyIdSelector:
+      matchLabels:
+        testing.upbound.io/example-name: testapp-key
+    maintenanceWindow: Mon:00:00-Mon:03:00
     passwordSecretRef:
       key: password
-      name: example-dbinstance
+      name: testapp-dbinstance
       namespace: upbound-system
-    publiclyAccessible: true
-    region: eu-west-1
-    # skipFinalSnapshot: true
-    # storageEncrypted: false
+    publiclyAccessible: false
+    region: us-west-1
+    skipFinalSnapshot: true
+    storageEncrypted: true
     storageType: gp2
     username: adminuser
   writeConnectionSecretToRef:
-    name: example-dbinstance-out
-    namespace: default
+    name: testapp-dbinstance-out
+    namespace: test-app
