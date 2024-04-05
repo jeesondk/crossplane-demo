@@ -5,7 +5,7 @@ metadata:
     meta.upbound.io/example-id: rds/v1beta1/instance
     uptest.upbound.io/timeout: "3600"
   labels:
-    testing.upbound.io/example-name: example-dbinstance
+    testing.upbound.io/example-name: testapp-dbinstance
   name: testapp-dbinstance-05042024
 spec:
   forProvider:
