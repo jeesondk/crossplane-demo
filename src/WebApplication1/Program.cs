@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using WebApplication1;
 using WebApplication1.context;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,12 +10,22 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Configuration.AddEnvironmentVariables();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddLogging(opt =>
+{
+    opt.ClearProviders();
+    opt.AddConsole();
+});
+builder.Services.AddTransient<IAwsRdsHelper, AwsRdsHelper>();
 builder.Services.AddDbContext<WeatherContext>(opt =>
-    opt.UseNpgsql($"Host={builder.Configuration.GetValue<string>("DB_HOST")};Database=testapp;Username={builder.Configuration.GetValue<string>("DB_USERNAME")};Password={builder.Configuration.GetValue<string>("DB_PASSWORD")}"));
+{
+    var rdsHelper = builder.Services.BuildServiceProvider().GetRequiredService<IAwsRdsHelper>();
+    opt.UseNpgsql(rdsHelper.GetRdsConnectionString());
+});
+    
 
 var app = builder.Build();
 
-Console.WriteLine($"Host={builder.Configuration.GetValue<string>("DB_HOST")};Database=testapp;Username={builder.Configuration.GetValue<string>("DB_USERNAME")};Password={builder.Configuration.GetValue<string>("DB_PASSWORD")}");
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

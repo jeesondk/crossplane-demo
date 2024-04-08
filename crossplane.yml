@@ -4,10 +4,4 @@ metadata:
   name: provider-aws-rds
 spec:
   package: xpkg.upbound.io/upbound/provider-aws-rds:v1.3.1
----
-apiVersion: pkg.crossplane.io/v1
-kind: Provider
-metadata:
-  name: provider-aws-vpc
-spec:
-  package: xpkg.upbound.io/upbound/provider-aws-vpc:v1.3.1
+

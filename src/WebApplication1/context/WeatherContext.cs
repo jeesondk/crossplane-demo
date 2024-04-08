@@ -7,11 +7,9 @@ public class WeatherContext: DbContext
 {
     public DbSet<WeatherForecast> WeatherForecasts { get; set; }
     
-    public string DbPath { get; }
-    
-    public WeatherContext(DbContextOptions<WeatherContext> options): base(options)
+    public WeatherContext(DbContextOptions<WeatherContext> options) : base(options)
     { }
-    
+        
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder
@@ -19,5 +17,4 @@ public class WeatherContext: DbContext
             .Property(b => b.Id)
             .HasValueGenerator<GuidValueGenerator>();
     }
-    
 }
