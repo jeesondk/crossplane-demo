@@ -6,7 +6,7 @@ metadata:
     uptest.upbound.io/timeout: "3600"
   labels:
     testing.upbound.io/example-name: testapp-dbinstance
-  name: testapp-dbinstance-05042024
+  name: testapp-dbinstance-08042924
 spec:
   forProvider:
     allocatedStorage: 20
@@ -28,7 +28,7 @@ spec:
     skipFinalSnapshot: true
     storageEncrypted: true
     storageType: gp2
-    username: adminuser
+    username: postgres
   writeConnectionSecretToRef:
     name: testapp-dbinstance-out
     namespace: test-app
