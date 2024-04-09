@@ -11,11 +11,13 @@ spec:
 apiVersion: ec2.aws.upbound.io/v1beta1
 kind: SpotDatafeedSubscription
 metadata:
+  annotations:
+    upjet.upbound.io/manual-intervention: This resource needs a s3 bucket and it needs a manual intervention.
   labels:
     testing.upbound.io/example-name: opencost
-  name: opencost-feed
+  name: default
 spec:
   forProvider:
-    bucke: jsjs-bucket-tmsmc
-    prefix: open-cost
+    bucket: jsjs-bucket-tmsmc
+    prefix: opencost
     region: eu-west-1
