@@ -1,7 +1,7 @@
 apiVersion: s3.aws.upbound.io/v1beta1
 kind: Bucket
 metadata:
-  generateName: crossplane-bucket-
+  generateName: opencost-bucket-
   labels:
     testing.upbound.io/example-name: opencost
 spec:
