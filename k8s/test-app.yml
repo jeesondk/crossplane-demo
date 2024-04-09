@@ -18,6 +18,8 @@ spec:
         ports:
         - containerPort: 8080
         env:
+        - name: ASPNETCORE_ENVIRONMENT
+          value: Development
         - name: DB_HOST
           valueFrom:
             secretKeyRef:
