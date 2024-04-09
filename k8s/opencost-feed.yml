@@ -16,8 +16,6 @@ metadata:
   name: opencost-feed
 spec:
   forProvider:
-    bucketSelector:
-      matchLabels:
-        testing.upbound.io/example-name: opencost
+    bucke: jsjs-bucket-tmsmc
     prefix: open-cost
     region: eu-west-1
