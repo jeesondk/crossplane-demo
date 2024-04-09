@@ -1,7 +1,7 @@
 apiVersion: s3.aws.upbound.io/v1beta1
 kind: Bucket
 metadata:
-  name: jsjs-opencost-bucket-tmsmc
+  name: jsjs-bucket-tmsmc
   labels:
     testing.upbound.io/example-name: opencost
 spec:
