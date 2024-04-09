@@ -10,17 +10,3 @@ spec:
     region: eu-west-1
   providerConfigRef:
     name: default
----
-apiVersion: ec2.aws.upbound.io/v1beta1
-kind: SpotDatafeedSubscription
-metadata:
-  labels:
-    testing.upbound.io/example-name: opencost
-  name: opencost-feed
-spec:
-  forProvider:
-    bucketSelector:
-      matchLabels:
-        testing.upbound.io/example-name: opencost
-    prefix: open-cost
-    region: eu-west-1
