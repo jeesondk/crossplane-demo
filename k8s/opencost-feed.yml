@@ -1,14 +1,12 @@
 apiVersion: s3.aws.upbound.io/v1beta1
 kind: Bucket
 metadata:
-  name: jsjs-bucket-tmsmc
   labels:
     testing.upbound.io/example-name: opencost
+  name: jsjs-bucket-tmsmc
 spec:
   forProvider:
     region: eu-west-1
-  providerConfigRef:
-    name: default
 ---
 apiVersion: ec2.aws.upbound.io/v1beta1
 kind: SpotDatafeedSubscription
