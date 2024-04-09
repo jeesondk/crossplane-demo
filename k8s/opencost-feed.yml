@@ -1,35 +1,26 @@
-apiVersion: apiextensions.crossplane.io/v1
-kind: Composition
+apiVersion: s3.aws.upbound.io/v1beta1
+kind: Bucket
+metadata:
+  annotations:
+    crossplane.io/external-name: hlu-jsjs-oc-bucket
+    meta.upbound.io/example-id: s3/v1beta1/bucketnotification
+  labels:
+    testing.upbound.io/example-name: opencost
+  name: opencost-bucket
 spec:
-  resources:
-  - name: StorageBucket
-    base:
-      apiVersion: s3.aws.upbound.io/v1beta1
-      kind: Bucket
-      metadata:
-        annotations:
-          crossplane.io/external-name: hlu-jsjs-oc-bucket
-          meta.upbound.io/example-id: s3/v1beta1/bucketnotification
-        labels:
-          testing.upbound.io/example-name: opencost
-        name: opencost-bucket
-      spec:
-        forProvider:
-          region: eu-west-1
-  - name: VM
-    base:
-      apiVersion: ec2.aws.upbound.io/v1beta1
-      kind: SpotDatafeedSubscription
-      metadata:
-        annotations:
-          upjet.upbound.io/manual-intervention: This resource needs a s3 bucket and it needs a manual intervention.
-        labels:
-          testing.upbound.io/example-name: opencost
-        name: default
-      spec:
-        forProvider:
-          bucketSelector:
-            matchLabels:
-              testing.upbound.io/example-name: opencost
-          prefix: open-cost
-          region: eu-west-1
+  forProvider:
+    region: eu-west-1
+---
+apiVersion: ec2.aws.upbound.io/v1beta1
+kind: SpotDatafeedSubscription
+metadata:
+  labels:
+    testing.upbound.io/example-name: opencost
+  name: default
+spec:
+  forProvider:
+    bucketSelector:
+      matchLabels:
+        testing.upbound.io/example-name: opencost
+    prefix: open-cost
+    region: eu-west-1
