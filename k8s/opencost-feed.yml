@@ -1,21 +1,21 @@
 apiVersion: s3.aws.upbound.io/v1beta1
 kind: Bucket
 metadata:
-  annotations:
-    crossplane.io/external-name: hlu-jsjs-oc-bucket
-    meta.upbound.io/example-id: s3/v1beta1/bucketnotification
+  generateName: crossplane-bucket-
   labels:
     testing.upbound.io/example-name: opencost
 spec:
   forProvider:
     region: eu-west-1
+  providerConfigRef:
+    name: default
 ---
 apiVersion: ec2.aws.upbound.io/v1beta1
 kind: SpotDatafeedSubscription
 metadata:
   labels:
     testing.upbound.io/example-name: opencost
-  name: default
+  name: opencost-feed
 spec:
   forProvider:
     bucketSelector:
