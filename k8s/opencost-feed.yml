@@ -4,7 +4,6 @@ metadata:
   generateName: opencost-bucket-
   labels:
     testing.upbound.io/example-name: opencost
-name: opencost-bucket
 spec:
   forProvider:
     region: eu-west-1
