@@ -23,22 +23,22 @@ spec:
         - name: DB_HOST
           valueFrom:
             secretKeyRef:
-              name: testapp-dbinstance-out
+              name: friday-dbinstance-out
               key: host
         - name: DB_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: friday-demo-app-dbinstance-out
+              name: friday-dbinstance-out
               key: password
         - name: DB_USERNAME
           valueFrom:
             secretKeyRef:
-              name: friday-demo-app-dbinstance-out
+              name: friday-dbinstance-out
               key: username
         - name: DB_PORT
           valueFrom:
             secretKeyRef:
-              name: friday-demo-app-dbinstance-out
+              name: friday-dbinstance-out
               key: port
 ---
 apiVersion: v1
