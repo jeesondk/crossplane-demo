@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: friday-demo
+spec:
+  selector:
+    matchLabels:
+      app: friday-demo
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: friday-demo
+    spec:
+      containers:
+      - name: friday-demo
+        image: jeesondk/testcode:latest
+        ports:
+        - containerPort: 8080
+        env:
+        - name: ASPNETCORE_ENVIRONMENT
+          value: Development
+        - name: DB_HOST
+          valueFrom:
+            secretKeyRef:
+              name: friday-dbinstance-out
+              key: host
+        - name: DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: friday-dbinstance-out
+              key: password
+        - name: DB_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: friday-dbinstance-out
+              key: username
+        - name: DB_PORT
+          valueFrom:
+            secretKeyRef:
+              name: friday-dbinstance-out
+              key: port
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: friday-demo
+spec:
+  type: LoadBalancer
+  selector:
+    app: friday-demo
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8080
