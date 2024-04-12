@@ -5,8 +5,8 @@ metadata:
     meta.upbound.io/example-id: rds/v1beta1/instance
     uptest.upbound.io/timeout: "3600"
   labels:
-    testing.upbound.io/example-name: friday-demo-app-dbinstance
-  name: friday-demo-app-dbinstance-08042924
+    testing.upbound.io/example-name: testapp-dbinstance
+  name: testapp-dbinstance-08042924
 spec:
   forProvider:
     allocatedStorage: 20
@@ -14,15 +14,15 @@ spec:
     autoMinorVersionUpgrade: true
     backupRetentionPeriod: 14
     backupWindow: 09:46-10:16
-    dbName: friday-demo-app
+    dbName: testapp
     engine: postgres
     engineVersion: "16.1"
     instanceClass: db.t3.micro
     maintenanceWindow: Mon:00:00-Mon:03:00
     passwordSecretRef:
       key: password
-      name: friday-demo-app-dbinstance
-      namespace: friday-demo
+      name: testapp-dbinstance
+      namespace: test-app
     publiclyAccessible: true
     region: eu-west-1
     skipFinalSnapshot: true
@@ -30,6 +30,6 @@ spec:
     storageType: gp2
     username: postgres
   writeConnectionSecretToRef:
-    name: friday-demo-app-dbinstance-out
+    name: testapp-dbinstance-out
     namespace: friday-demo
 
